@@ -36,7 +36,7 @@ public class MyBatisBookDAO implements BookDAO {
 
 	@Override
 	public List<Book> buscarTodos() throws PersistenceException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		return bookMapper.getBooks();
 	}
 
 	@Override

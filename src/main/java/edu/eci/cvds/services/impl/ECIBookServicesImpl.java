@@ -44,7 +44,12 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Override
 	public List<Book> listarLibros() throws ServicesException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		try {
+			return bookDAO.buscarTodos();
+		} catch (PersistenceException e) {
+			throw new ServicesException("Error en la consulta:" + e.getLocalizedMessage(), e);
+		}
+	
 	}
 
 	@Override
@@ -63,7 +68,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Override
 	public List<Book> buscarLibrosPorCalificacion(int calificacion) throws ServicesException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		throw new UnsupportedOperationException("Not supported yetT.");
 	}
 
 	@Override

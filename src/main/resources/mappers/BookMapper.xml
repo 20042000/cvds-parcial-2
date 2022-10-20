@@ -29,5 +29,19 @@
 			WHERE b.author_id = #{author}
 		</if>
 	</select>
+	
+	
+	<select id="getBooks" resultMap="BookResult"
+		parameterType="int">
+		SELECT
+			b.id ,
+			b.name ,
+			b.price ,
+			b.`language` ,
+			b.publicationdate ,
+			b.rating ,
+			b.format
+		FROM BOOK b
+	</select>
 
 </mapper>
