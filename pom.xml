@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>edu.eci.cvds</groupId>
-    <artifactId>parcial-2-20211</artifactId>
+    <artifactId>parcial-2-20222</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-	<name>Parcial 2 - 2021-1</name>
+	<name>Parcial 2 - 2022-2</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
