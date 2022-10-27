@@ -28,6 +28,7 @@
 		<if test="author != null">
 			WHERE b.author_id = #{author}
 		</if>
+		 LIMIT 10
 	</select>
 	
 	
@@ -41,7 +42,7 @@
 			b.publicationdate ,
 			b.rating ,
 			b.format
-		FROM BOOK b
+		FROM BOOK b LIMIT 10
 	</select>
 
 </mapper>
