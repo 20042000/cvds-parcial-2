@@ -63,7 +63,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Override
 	public List<Review> buscarResenaPorLibro(int libroId) throws ServicesException {
-		throw new UnsupportedOperationException("Not supported yet.");
+			throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
@@ -88,6 +88,21 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		} catch (PersistenceException ex) {
 			throw new ServicesException("Error en la consulta:" + ex.getLocalizedMessage(), ex);
 		}
+	}
+	
+	@Override
+	public void guardar(Book p) throws ServicesException{
+		try { 
+			bookDAO.guardar(p);
+		} catch (PersistenceException ex) { 
+			throw new ServicesException("Error al agregar el libro"+p,ex);
+		}
+		
+	}
+	
+	@Override
+	public Review buscarResena(short rating)throws ServicesException{
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 }

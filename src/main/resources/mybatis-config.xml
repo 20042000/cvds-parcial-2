@@ -28,6 +28,7 @@
 	<mappers>
 		<mapper resource="mappers/AuthorMapper.xml"></mapper>
 		<mapper resource="mappers/BookMapper.xml"></mapper>
+		<mapper resource="mappers/ReviewMapper.xml"></mapper>
 	</mappers>
 
 </configuration>

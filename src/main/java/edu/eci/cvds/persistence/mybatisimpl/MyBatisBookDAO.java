@@ -41,7 +41,11 @@ public class MyBatisBookDAO implements BookDAO {
 
 	@Override
 	public void guardar(Book p) throws PersistenceException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		try{ 
+			bookMapper.guardar(p);
+		}catch(org.apache.ibatis.exceptions.PersistenceException e){ 
+			throw new UnsupportedOperationException("Not supported yet.");
+		}
 	}
 
 	@Override
@@ -51,7 +55,11 @@ public class MyBatisBookDAO implements BookDAO {
 
 	@Override
 	public Book buscar(int libroId) throws PersistenceException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		try{ 
+			return bookMapper.consultarLibro(libroId);
+		}catch(org.apache.ibatis.exceptions.PersistenceException e){
+			throw new UnsupportedOperationException("Not supported yet.");
+		}
 	}
 
 	@Override

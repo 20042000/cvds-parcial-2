@@ -1,6 +1,7 @@
 package edu.eci.cvds.entities;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Clase que representa una materia
@@ -14,6 +15,7 @@ public class Book {
 	private Date publicationdate;
 	private short rating;
 	private String format;
+	//private List<Review> resenas;
 
 	public Book(int id, String name, int price, String language, Date publicationdate, short rating, String format) {
 		this.id = id;

@@ -5,6 +5,7 @@ import java.util.List;
 import edu.eci.cvds.entities.Author;
 import edu.eci.cvds.entities.Book;
 import edu.eci.cvds.entities.Review;
+import edu.eci.cvds.persistence.PersistenceException;
 
 public interface ECIBookServices {
 
@@ -87,5 +88,9 @@ public interface ECIBookServices {
 	 * @throws ServicesException
 	 */
 	public Book buscarLibro(int libroId) throws ServicesException;
+	
+	public void guardar(Book p) throws ServicesException;
+	
+	public Review buscarResena(short rating)throws ServicesException;
 
 }

@@ -11,5 +11,9 @@ public interface BookMapper {
 	List<Book> getByAuthor(@Param("author") int authorId);
 	
 	public List<Book> getBooks();
+	
+	public Book consultarLibro(@Param("id")int id);
+	
+	public void guardar(@Param("libro")Book libro);
 
 }

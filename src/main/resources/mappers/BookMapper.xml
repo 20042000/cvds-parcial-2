@@ -12,6 +12,7 @@
 		<result property='language' column='language' />
 		<result property='publicationdate' column='publicationdate' />
 		<result property='rating' column='rating' />
+		<collection property="resenas" ofType='Review' resultMap='edu.eci.cvds'></collection>
 	</resultMap>
 
 	<select id="getByAuthor" resultMap="BookResult"
@@ -32,8 +33,7 @@
 	</select>
 	
 	
-	<select id="getBooks" resultMap="BookResult"
-		parameterType="int">
+	<select id="getBooks" resultMap="BookResult" parameterType="int">
 		SELECT
 			b.id ,
 			b.name ,
@@ -44,5 +44,33 @@
 			b.format
 		FROM BOOK b LIMIT 10
 	</select>
+	
+	<select id="consultarLibro" resultMap="BookResult" parameterType="map">
+		SELECT
+			b.id ,
+			b.name ,
+			b.price ,
+			b.`language` ,
+			b.publicationdate ,
+			b.rating ,
+			b.format,
+			
+			r.id,
+			r.title,
+			r.date,
+			r.comment,
+			r.rating
+			
+		FROM BOOK as b inner join REVIEW as r
+		ON b.id=book_id
+		where b.id = #{id}
+		order by r.date, r.rating
+	</select>
+	
+	<insert parameterType="map" id="agregarLibro">
+    	insert into
+    	BOOK (id, name, price, format, language, publicationDate, rating)
+    	VALUES (#{libro.id}, #{libro.name}, #{libro.price}, #{libro.format}, #{libro.language}, #{libro.publicationDate}, #{libro.rating});
+    </insert>
 
 </mapper>
